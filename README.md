@@ -64,13 +64,13 @@ Usage
         Enter labels for RSA and AES keys.
         Provide the token label and PIN.
         Specify key size (2048 or 4096).
-        Decide whether the public key should be a wrapping key.
-        Generate a new key pair or use an existing one.
+        Decide whether the RSA public key should be a wrapping key.
+        Generate a new RSA key pair or use an existing one.
         Generate a CSR and save it to a file.
 
     Example of saving wrapped private key material:
         Default: Current working directory.
-        Custom: Provide a directory path when prompted.
+        Custom: Provide a directory path when prompted. (e.g C:\Temp or /home/)
 
     CSR output will be saved as a .req file.
 
@@ -81,11 +81,12 @@ Example Workflow
         Input AES wrapping key label: aes_key.
         Input token label: loadshared accelerator.
         Input PIN: 1234.
-        Generate or use an existing RSA/AES key.
+        Generates or uses existing RSA & AES keys.
         Save the wrapped key material (e.g., rsa_key_wrapped_key_MM_DD_YYYY-HH_MM.bin).
 
     Generate CSR:
         Provide the key label: rsa_key.
+        Fill out X.509 information.
         CSR file will be saved as rsa_key_csr.req.
 
 Dependencies
@@ -113,7 +114,7 @@ License
 
 Contributing
 
-Contributions are welcome! Submit pull requests or issues via GitHub.
+Contributions are welcome! Please submit pull requests or issues.
 
 
 Author

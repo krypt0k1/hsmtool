@@ -82,7 +82,7 @@ Example Workflow
         Input token label: loadshared accelerator.
         Input PIN: 1234.
         Generates or uses existing RSA & AES keys.
-        Save the wrapped key material (e.g., rsa_key_wrapped_key_MM_DD_YYYY-HH_MM.bin).
+        Save the wrapped key material (saved in format: PKCS11_KEY_LABEL_wrapped_key_MM_DD_YYYY-HH_MM.bin).
 
     Generate CSR:
         Provide the key label: rsa_key.

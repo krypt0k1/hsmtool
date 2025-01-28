@@ -11,6 +11,7 @@ Purpose
 This tool simplifies and automates key management operations in secure environments, ensuring compliance with cryptographic best practices. It is ideal for use cases requiring secure key storage, private key wrapping for backup or transport, and CSR generation for obtaining digital certificates.
 
 Features
+
     Key Management:
         Creates or uses an existing RSA key pair.
         Wraps the RSA private key with a new or existing AES wrapping key.

@@ -1,6 +1,6 @@
 HSM RSA Key Management and CSR Generation Script
 
-# [HSMTool](https://github.com/krypt0k1/CryptographyProjects/blob/hsmtool/hsmtool.py) 
+# [HSMTool](https://github.com/krypt0k1/hsmtool/blob/main/hsmtool.py) 
 
 Description
 

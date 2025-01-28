@@ -4,7 +4,7 @@ HSM RSA Key Management and CSR Generation Script
 
 Description
 
-This Python script is designed for managing cryptographic keys on a nShield HSM. It provides functionality for creating RSA key pairs, wrapping private keys with AES keys, and generating Certificate Signing Requests (CSRs) using the RSA keys stored on the HSM. The program integrates with OpenSSL via the nfkm engine for CSR generation and supports the secure export of private keys in encrypted binary format.
+This Python script is designed for managing cryptographic keys on a nShield HSM. It provides functionality for creating RSA key pairs, AES wrapping secret keys, and generating Certificate Signing Requests (CSRs) using the RSA keys stored on the HSM. The program integrates with OpenSSL via the nfkm engine for CSR generation and supports the secure export of private keys in encrypted binary format.
 
 Purpose
 

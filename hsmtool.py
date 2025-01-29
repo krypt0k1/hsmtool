@@ -47,7 +47,7 @@ Dependencies: nCipher nShield HSM, nCipher nShield Software, OpenSSL (Security W
               python modules: python-pkcs11, os, re, sys, time, and subprocess
 Developed by: Armando Montero, nCipher Security
 """
-# Create the banner
+# Create banner instance 
 create_banner(banner_text)
 
 # Functions 

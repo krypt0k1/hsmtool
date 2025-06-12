@@ -690,10 +690,9 @@ def generate_hsm_key(session):
                     private_template=private_template
                 )
             elif key_type_input == 'DSA':
-                # DSA key generation often involves two steps: generating domain parameters, then the key pair.
-                # pykcs11's generate_keypair can often handle this in one go if the HSM supports it.
+                # DSA key generation often involves two steps: generating domain parameters, then the key pair.               
                 # Key size for DSA refers to the prime modulus length (L).
-                key_size_bits = 1024 # Fixed for stability; higher sizes can cause issues with some HSMs.
+                key_size_bits = 1024 # Fixed for stability; higher sizes cause errors with nCipher HSMs.
                 print(f"Note: DSA prime modulus length (L) is fixed to {key_size_bits} bits for stability.")
 
                 public_template = get_dsa_public_template()
@@ -814,8 +813,7 @@ def copy_hsm_key(session):
                 Attribute.LABEL: new_key_label
             }
             # Copy relevant attributes, respecting security best practices
-            # For a copy, generally inherit sensitive/extractable from original if allowed
-            # This logic can be refined based on specific HSM requirements.
+            # For a copy, generally inherit sensitive/extractable from original if allowed            
             try:
                 new_key_attributes[Attribute.SENSITIVE] = key_to_copy[Attribute.SENSITIVE]
                 new_key_attributes[Attribute.EXTRACTABLE] = key_to_copy[Attribute.EXTRACTABLE]
@@ -1023,7 +1021,6 @@ def modify_key(session):
     except Exception as e:
         print(f"❌ An unexpected error occurred during key modification: {e}")
 
-
 # --- Key Wrapping/Unwrapping Helper Templates ---
 def get_public_template(key_type):
     """
@@ -1040,7 +1037,6 @@ def get_public_template(key_type):
         return get_dsa_public_template()
     else:
         raise ValueError(f"Unsupported key type: {key_type}")
-
 
 def get_symmetric_template():
     """Returns a template for symmetric keys."""
@@ -1067,7 +1063,6 @@ def get_rsa_private_template():
         Attribute.PRIVATE: True,
     }
 
-
 def get_rsa_public_template():
     """Returns a template for RSA public keys."""
     return {
@@ -1076,7 +1071,6 @@ def get_rsa_public_template():
         Attribute.ENCRYPT: True,  # RSA public keys can encrypt
         Attribute.WRAP: True,  # Can wrap symmetric keys
     }
-
 
 def get_dsa_private_template():
     """Returns a template for DSA private keys."""
@@ -1098,7 +1092,6 @@ def get_dsa_public_template():
         Attribute.WRAP: False,     # DSA public keys generally don't wrap
     }
 
-
 def get_ec_private_template():
     """Returns a template for EC private keys."""
     return {
@@ -1111,7 +1104,6 @@ def get_ec_private_template():
         Attribute.PRIVATE: True,
     }
 
-
 def get_ec_public_template():
     """Returns a template for unwrapped EC public keys."""
     return {
@@ -1120,7 +1112,6 @@ def get_ec_public_template():
         Attribute.ENCRYPT: True,  # EC public keys can encrypt (e.g., using ECIES)
         Attribute.WRAP: True,  # Can wrap symmetric keys
     }
-
 
 # --- Cryptographic Operations ---
 
@@ -1161,10 +1152,7 @@ def wrap_key(session):
                 print("❌ Required keys not found. Cannot proceed with wrapping.")
                 return
 
-            # Explicitly define the mechanism for RSA wrapping (e.g., RSA_PKCS_OAEP)
-            # Default mechanism_param is None, which might default to no padding for RSA-OAEP if allowed by HSM.
-            # For nCipher, CKM_RSA_PKCS_OAEP is often used with mechanism_param set to specific values.
-            # Here, we keep it simple for generic pykcs11.
+            # Explicitly define the mechanism for RSA wrapping (e.g., RSA_PKCS_OAEP).          
             wrapped_aes_key = rsa_wrapping_public_key.wrap_key(
                 aes_key_to_be_wrapped_by_rsa, mechanism=Mechanism.RSA_PKCS_OAEP)
             print(f"✅ Wrapped AES key successfully. Wrapped data length: {len(wrapped_aes_key)} bytes.")

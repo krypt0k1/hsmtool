@@ -217,4 +217,4 @@ Contributions are welcome! If you find a bug or have an idea for an enhancement,
 
 # 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/krypt0k1/hsmtool/blob/main/LICENSE) file for details.

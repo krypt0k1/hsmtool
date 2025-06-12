@@ -1050,7 +1050,6 @@ def get_symmetric_template():
         Attribute.EXTRACTABLE: False,
     }
 
-
 def get_rsa_private_template():
     """Returns a template for RSA private keys."""
     return {
@@ -1081,7 +1080,6 @@ def get_dsa_private_template():
         Attribute.SENSITIVE: True,
         Attribute.EXTRACTABLE: False,
     }
-
 
 def get_dsa_public_template():
     """Returns a template for DSA public keys."""
@@ -1198,7 +1196,6 @@ def wrap_key(session):
         print("Please ensure the keys are compatible for wrapping and have the correct attributes (e.g., CKA_WRAP).")
     except Exception as e:
         print(f"❌ An unexpected error occurred during key wrapping: {e}")
-
 
 def unwrap_key(session):
     """Unwraps a wrapped key file using a wrapping key on the HSM token."""

@@ -104,10 +104,10 @@ Then, install the required Python packages:
         
 # 💡 Usage
 
-The main entry point for the tool is hsm_tool.py.
+The main entry point for the tool is hsmtool.py.
 1. Start the Tool
    
-    python hsm_tool.py
+    python hsmtool
    
 Upon successful execution, you will be prompted to select a PKCS#11 token and enter its PIN. After establishing a session, the main menu will be displayed.
 

@@ -71,6 +71,8 @@ Follow these steps to set up the HSM Cryptographic Operations Tool:
 
     Create a requirements.txt file in the root of the repository with the following content:
 
+        setuptools>=80.9.0
+        wheel=>0.45.1
         python-pkcs11>=0.7.0
         prettytable>=3.0.0
 

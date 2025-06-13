@@ -50,8 +50,16 @@ Before you begin, ensure you have the following installed and configured:
     python3 --version
 
     Microsoft requires C++ Build Tools
-    Download it here: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+    
+    Install Microsoft C++ Build Tools
+    Visit: https://visualstudio.microsoft.com/visual-cpp-build-tools
 
+    Download and run the installer.
+
+    In the installer:
+        Choose C++ build tools.
+        Make sure to check “Windows 10 SDK” or “Windows 11 SDK” and “MSVC v14.x” (where x is the latest version).
+        
     nCipher HSM and PKCS#11 Library:
         You must have nShield Security World software installed (contact nshieldsupport@entrust.com) 
         You must have an nCipher HSM connected and configured.

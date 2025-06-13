@@ -53,13 +53,11 @@ Before you begin, ensure you have the following installed and configured:
     Download it here: https://visualstudio.microsoft.com/visual-cpp-build-tools/
 
     nCipher HSM and PKCS#11 Library:
-
+        You must have nShield Security World software installed (contact nshieldsupport@entrust.com) 
         You must have an nCipher HSM connected and configured.
-
         The nCipher PKCS#11 library (cknfast.so on Linux, cknfast.dll on Windows) must be installed on your system.
 
     preload Utility (for CKA_TRUSTED operation):
-
         The preload utility (part of the nCipher tools) is required if you intend to use the "Set CKA_TRUSTED attribute" feature.
 
 # 🚀 Installation

@@ -1,4 +1,5 @@
 # Required functions for interacting with an HSM via PKCS#11
+# -*- coding: utf-8 -*-
 
 import pkcs11
 import platform
